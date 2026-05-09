@@ -1,0 +1,390 @@
+body{
+ background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+ transition: background-image 1s ease-in-out;
+}
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.card{
+  background: #f4f6ff;
+  border-left:6px solid #667eea;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+.card span{
+  display:block;
+  font-size:20px;
+  margin-top:5px;
+}
+
+/* INPUTS */
+input, select{
+  width:20%;
+  padding:10px;
+  margin:5px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+/* BOTÕES */
+button{
+  padding:6px 10px;
+  border:none;
+  border-radius:8px;
+  background:#667eea;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+button:hover{
+  opacity:0.85;
+  transform: scale(1.05);
+}
+
+/* BOTÕES DA TABELA */
+td button{
+  padding:4px 6px;
+  font-size:12px;
+
+}
+
+/* TABELA */
+.tabela{
+  width:100%;
+  border-collapse:collapse;
+  border-radius: 5%;
+  margin-top:10px;
+}
+
+.tabela th{
+  background:#667eea;
+
+  color:white;
+  padding:10px;
+}
+
+.tabela td{
+  padding:8px;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+
+.tabela tr:nth-child(even){
+  background:#f7f8ff;
+}
+
+.tabela tr:hover{
+  background:#e8ebff;
+}
+
+/* CORES */
+.receita{
+  color:#2f855a;
+  font-weight:bold;
+}
+
+.despesa{
+  color:#c53030;
+  font-weight:bold;
+}
+
+/* LINHA PENDENTE */
+.linha-pendente{
+  background:black !important;
+}
+
+/* RESPONSIVO */
+@media(max-width:600px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+}
+.linha-principal{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+#mesFormatado, #filtroMesFormatado{
+  cursor:pointer;
+  background:#f4f6ff;
+  font-weight:bold;
+}
+.mes-hidden{
+ position:absolute;
+ opacity:0;
+ pointer-events:none;
+}
+.campo-mes-wrap{
+ position:relative;
+}
+
+
+#descricao{
+  width:70%;
+
+}
+
+#valor{
+  width:20%;
+    text-align:right;
+}
+
+#date{
+width: 20%;
+text-align: center;
+
+}
+#tipo{
+width: 20%;
+text-align: center;
+
+}
+.linha-principal input{
+  width:100%;
+}
+
+.form-grid{
+  display:flex;
+  justify-content:space-between;
+      grid-template-columns: 1fr;
+        gap:10px;
+
+}
+@media(max-width: 768px){
+
+  .container{
+    padding:15px;
+  }
+
+  h1{
+    font-size:20px;
+  }
+
+  /* cards viram uma coluna */
+  .cards{
+    grid-template-columns: 1fr;
+  }
+
+  /* tabela vira scroll lateral */
+  .tabela{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+    border:black
+  }
+
+  /* botões maiores no mobile */
+  button{
+    width:100%;
+    margin-top:5px;
+  }
+
+}
+input, select{
+  font-size:16px; /* evita zoom automático no iPhone */
+}
+
+button{
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .linha-principal{
+    grid-template-columns: 1fr;
+    gap:10px;
+  }
+}
+
+/* Cabeçalho */
+.tabela th{
+  background:#667eea;
+  color:white;
+  padding:12px;
+  font-weight:bold;
+  border-bottom:2px solid black;
+}
+
+/* Células */
+.tabela td{
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+/* Linhas alternadas */
+.tabela tr:nth-child(even){
+  background:#f9f9ff;
+}
+
+/* Hover */
+.tabela tr:hover{
+  background:#e8ebff;
+}
+
+/* Última linha sem borda */
+.tabela tr:last-child td{
+  border-bottom:black;
+}
+.tabela td, .tabela th{
+  border-right:1px solid black;
+}
+
+.tabela td:last-child,
+.tabela th:last-child{
+  border-right:black;
+}
+
+#filtroMes{
+  margin:10px 0;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
+   width:40%;
+    text-align:right;
+}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.tab-btn{
+  padding:8px 15px;
+  border:none;
+  border-radius:8px;
+  background:#ddd;
+  cursor:pointer;
+}
+
+.tab-btn.active{
+  background:#667eea;
+  color:white;
+}
+
+.aba{
+  animation: fade 0.3s;
+}
+
+@keyframes fade{
+ from{opacity:0;}
+ to{opacity:1;}
+}
+
+/* reserva */
+.reserva-box{
+  padding:15px;
+  background:#f4f6ff;
+  border-radius:10px;
+}
+
+.reserva-controles{
+  display:flex;
+  gap:50px;
+  margin-top:10px;
+}
+.categorias{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+/* botão normal */
+.categorias button{
+  background:white;
+  color: black;
+  border:1px solid #dcdcdc;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+/* hover leve */
+.categorias button:hover{
+  background:#dde4ff;
+}
+
+/* ✅ BOTÃO SELECIONADO */
+.categorias button.ativo{
+  background:#667eea;
+  color:black;
+  border-color:#667eea;
+  font-weight:bold;
+  transform:scale(1.25);
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+.categorias button[data-cat="Mercado"].ativo{
+  background:green;
+}
+#filtroMes{
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+
+.linha-apagar {
+  background: #ffe0b2 !important;
+}
+button {
+  width: auto;
+  margin-top: 10px;
+}
+/* FUNDO DINÂMICO */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: 110%;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  transition: opacity 2.5s ease-in-out;
+  z-index: -1;
+}
+
+/* camada inicial visível */
+#bg1 {
+  opacity: 1;
+}
+
+/* camada escondida */
+#bg2 {
+  opacity: 0;
+}
