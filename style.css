@@ -383,6 +383,27 @@ button {
 #bg1 {
   opacity: 1;
 }
+@media(max-width: 768px) {
+
+  input, select {
+    width: 100% !important;
+  }
+
+  .linha-principal {
+    grid-template-columns: 1fr;
+  }
+
+  #btnAdd {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  #mes, #tipo, #status {
+    width: 100%;
+  }
+
+}
 
 /* camada escondida */
 #bg2 {
