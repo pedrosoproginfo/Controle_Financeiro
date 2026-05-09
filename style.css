@@ -405,6 +405,12 @@ button {
 
 }
 
+#btnAdd {
+  background: #667eea;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
 /* camada escondida */
 #bg2 {
   opacity: 0;
