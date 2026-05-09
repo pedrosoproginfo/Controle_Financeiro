@@ -48,18 +48,17 @@
 </div>
 
 <!-- DATA -->
- 
-<input type="date" id="mes">
-
-
-<select id="tipo" onchange="ajustarStatus()">
+ <div class="linha-principal">
+  <input type="date" id="mes">
+  <select id="tipo" onchange="ajustarStatus()">
  <option value="receita">Receita</option>
  <option value="despesa">Despesa</option>
 </select>
+  <select id="status"></select>
+  <button onclick="adicionar()" id="btnAdd">Adicionar</button>
+</div>
 
-<select id="status"></select>
 
-<button onclick="adicionar()" id="btnAdd">Adicionar</button>
 
 <hr>
 
