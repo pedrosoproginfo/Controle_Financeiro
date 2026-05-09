@@ -372,3 +372,39 @@ function salvar(){
  localStorage.setItem("dados", JSON.stringify(dados));
 }
 
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  console.log("✅ PWA pronto para instalar");
+
+  const btn = document.createElement("button");
+  btn.innerText = "📲 Instalar App";
+  btn.style.position = "fixed";
+  btn.style.bottom = "20px";
+  btn.style.right = "20px";
+  btn.style.padding = "12px 16px";
+  btn.style.background = "#667eea";
+  btn.style.color = "white";
+  btn.style.border = "none";
+  btn.style.borderRadius = "10px";
+  btn.style.fontWeight = "bold";
+  btn.style.zIndex = "999";
+
+  btn.onclick = async () => {
+    deferredPrompt.prompt();
+
+    const choice = await deferredPrompt.userChoice;
+
+    if (choice.outcome === "accepted") {
+      console.log("Usuário instalou ✅");
+      btn.remove();
+    }
+
+    deferredPrompt = null;
+  };
+
+  document.body.appendChild(btn);
+});
