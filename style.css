@@ -131,10 +131,10 @@ td button{
     grid-template-columns:1fr;
   }
 }
-.linha-principal{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
+.linha-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 #mesFormatado, #filtroMesFormatado{
   cursor:pointer;
